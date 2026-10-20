@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface name="RestAPI">
+  <package>uk.ac.le.cs.CO3102</package>
+  <extends>
+    <interfaceRef>Remote</interfaceRef>
+  </extends>
+  <import>java.rmi.Remote</import>
+  <import>java.rmi.RemoteException</import>
+  <import>java.io.*</import>
+  <abstract_method name="authenticate">
+    <modifier>public</modifier>
+    <parameters>
+      <parameter type="String">account</parameter>
+      <parameter type="String">password</parameter>
+    </parameters>
+    <exceptions>
+      <exception>IOException</exception>
+      <exception>RemoteException</exception>
+    </exceptions>
+    <return>boolean</return>
+  </abstract_method>
+  <abstract_method name="send">
+    <modifier>public</modifier>
+    <parameters>
+      <parameter type="String">message</parameter>
+    </parameters>
+    <return>void</return>
+  </abstract_method>
+</interface>
